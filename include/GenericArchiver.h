@@ -8,7 +8,7 @@
 #ifndef GENERICARCHIVER_INCLUDE_ARCHIVER_H_
 #define GENERICARCHIVER_INCLUDE_ARCHIVER_H_
 
-#include <uastring.h>
+#include <uabase.h>
 #include <uanodeid.h>
 #include <statuscode.h>
 
@@ -19,11 +19,13 @@ class GenericArchiver
 {
 public:
 
-    virtual ~GenericArchiver ();
+    virtual ~GenericArchiver () {}
 
-    GenericArchiver * instance () { return s_instance; }
+    static GenericArchiver * instance ();
 
-	void archiveAssignment ( const UaNodeId& objectAddress, const UaNodeId& variableAddress, OpcUa_UInt32 value, UaStatus statusCode  );
+	virtual void archiveAssignment ( const UaNodeId& objectAddress, const UaNodeId& variableAddress, OpcUa_UInt32 value, UaStatus statusCode  ) = 0;
+
+	virtual void kill () = 0;
 
 
 

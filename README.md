@@ -10,7 +10,7 @@ The Generic Archiver, with an obligatory specific archiver, provides data loggin
 * deliver quality mechanism to debug, test and development of OPC-UA servers based in quasar,
 * deliver persistency
 
-The Generic Archiver is just an interface in the C++ programming language. Specific Archivers implement this interface and provide factual data logging into a data-base, a file, etc. As of June 2017, the only known Specific Archiver is the [https://github.com/quasar-team/InfluxDbArchiver](InfluxDb Archiver).
+The Generic Archiver is just an interface in the C++ programming language. Specific Archivers implement this interface and provide factual data logging into a data-base, a file, etc. As of June 2017, the only known Specific Archiver is the [InfluxDb Archiver](https://github.com/quasar-team/InfluxDbArchiver) .
 
 The Generic Archiver is organized as a Quasar Optional Module (look at Quasar docs).
  

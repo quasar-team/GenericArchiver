@@ -12,6 +12,8 @@
 #include <uanodeid.h>
 #include <statuscode.h>
 
+class UaVariant;
+
 namespace GenericArchiver
 {
 
@@ -23,10 +25,8 @@ public:
 
     static GenericArchiver * instance ();
 
-	virtual void archiveAssignment ( const UaNodeId& objectAddress, const UaNodeId& variableAddress, OpcUa_UInt32 value, UaStatus statusCode  ) = 0;
-    virtual void archiveAssignment ( const UaNodeId& objectAddress, const UaNodeId& variableAddress, const UaString& value, UaStatus statusCode  ) = 0;
-    virtual void archiveAssignment ( const UaNodeId& objectAddress, const UaNodeId& variableAddress, OpcUa_Float, UaStatus statusCode  ) = 0;
-    virtual void archiveAssignment ( const UaNodeId& objectAddress, const UaNodeId& variableAddress, OpcUa_Double, UaStatus statusCode  ) = 0;
+    virtual void archiveAssignment ( const UaNodeId& objectAddress, const UaNodeId& variableAddress, const std::string& variableName, const UaVariant& value, UaStatus statusCode  ) = 0;
+
 	virtual void kill () = 0;
 
 

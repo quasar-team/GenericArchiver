@@ -14,6 +14,9 @@
 
 class UaVariant;
 
+// forward-decls
+namespace OpcUa { class BaseVariableType; }
+
 namespace GenericArchiver
 {
 
@@ -27,7 +30,17 @@ public:
 
     virtual void archiveAssignment ( const UaNodeId& objectAddress, const UaNodeId& variableAddress, const std::string& variableName, const UaVariant& value, UaStatus statusCode  ) = 0;
 
+    virtual UaStatus retrieveAssignment (
+            OpcUa::BaseVariableType*  variable,
+            OpcUa_DateTime            timeFrom,
+            OpcUa_DateTime            timeTo,
+            unsigned int              maxValues,
+            UaDataValues&             output ) = 0;
+
+
 	virtual void kill () = 0;
+
+
 
 
 
